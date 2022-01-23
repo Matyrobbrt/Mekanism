@@ -9,7 +9,7 @@ import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.MekanismRenderer.Model3D;
 import mekanism.client.render.RenderResizableCuboid.FaceDisplay;
 import mekanism.common.base.ProfilerConstants;
-import mekanism.common.tile.TileEntityTeleporter;
+import mekanism.common.tile.multiblock.TileEntityTeleporter;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;

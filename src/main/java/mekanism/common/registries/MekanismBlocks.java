@@ -104,7 +104,7 @@ import mekanism.common.tile.TileEntityFluidTank;
 import mekanism.common.tile.TileEntityModificationStation;
 import mekanism.common.tile.TileEntityPressureDisperser;
 import mekanism.common.tile.TileEntityQuantumEntangloporter;
-import mekanism.common.tile.TileEntityTeleporter;
+import mekanism.common.tile.multiblock.TileEntityTeleporter;
 import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.laser.TileEntityLaser;
 import mekanism.common.tile.laser.TileEntityLaserAmplifier;
@@ -154,6 +154,7 @@ import mekanism.common.tile.multiblock.TileEntitySPSPort;
 import mekanism.common.tile.multiblock.TileEntityStructuralGlass;
 import mekanism.common.tile.multiblock.TileEntitySuperchargedCoil;
 import mekanism.common.tile.multiblock.TileEntitySuperheatingElement;
+import mekanism.common.tile.multiblock.TileEntityTeleporterFrame;
 import mekanism.common.tile.multiblock.TileEntityThermalEvaporationBlock;
 import mekanism.common.tile.multiblock.TileEntityThermalEvaporationController;
 import mekanism.common.tile.multiblock.TileEntityThermalEvaporationValve;
@@ -221,7 +222,7 @@ public class MekanismBlocks {
     public static final BlockRegistryObject<BlockBin, ItemBlockBin> ULTIMATE_BIN = registerBin(MekanismBlockTypes.ULTIMATE_BIN);
     public static final BlockRegistryObject<BlockBin, ItemBlockBin> CREATIVE_BIN = registerBin(MekanismBlockTypes.CREATIVE_BIN);
 
-    public static final BlockRegistryObject<BlockBase<BlockType>, ItemBlockTooltip<BlockBase<BlockType>>> TELEPORTER_FRAME = registerBlock("teleporter_frame", () -> new BlockBase<>(MekanismBlockTypes.TELEPORTER_FRAME, properties -> properties.strength(5, 6)));
+    public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityTeleporterFrame>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityTeleporterFrame>>> TELEPORTER_FRAME = registerBlock("teleporter_frame", () -> new BlockBasicMultiblock<>(MekanismBlockTypes.TELEPORTER_FRAME));
     public static final BlockRegistryObject<BlockBase<BlockType>, ItemBlockTooltip<BlockBase<BlockType>>> STEEL_CASING = registerBlock("steel_casing", () -> new BlockBase<>(MekanismBlockTypes.STEEL_CASING, properties -> properties.strength(3.5F, 9)));
     public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityDynamicTank>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityDynamicTank>>> DYNAMIC_TANK = registerBlock("dynamic_tank", () -> new BlockBasicMultiblock<>(MekanismBlockTypes.DYNAMIC_TANK));
     public static final BlockRegistryObject<BlockStructuralGlass<TileEntityStructuralGlass>, ItemBlockTooltip<BlockStructuralGlass<TileEntityStructuralGlass>>> STRUCTURAL_GLASS = registerBlock("structural_glass", () -> new BlockStructuralGlass<>(MekanismBlockTypes.STRUCTURAL_GLASS));

@@ -1,5 +1,6 @@
-package mekanism.common.tile;
+package mekanism.common.tile.multiblock;
 
+import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectArrayMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
@@ -7,6 +8,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
@@ -73,6 +75,13 @@ import net.minecraftforge.server.ServerLifecycleHooks;
 
 public class TileEntityTeleporter extends TileEntityMekanism implements IChunkLoader {
 
+    private static final Map<Direction.Axis, List<Direction>> DIRECTIONS_BY_AXIS = ImmutableMap.of(
+            Direction.Axis.X, List.of(Direction.EAST, Direction.WEST),
+            Direction.Axis.Y, List.of(Direction.UP, Direction.DOWN),
+            Direction.Axis.Z, List.of(Direction.SOUTH, Direction.NORTH)
+    );
+    private static final int MAX_FRAME_SIZE = 10;
+
     public final Set<UUID> didTeleport = new ObjectOpenHashSet<>();
     private AABB teleportBounds;
     public int teleDelay = 0;
@@ -81,6 +90,7 @@ public class TileEntityTeleporter extends TileEntityMekanism implements IChunkLo
     private Direction frameDirection;
     private boolean frameRotated;
     private EnumColor color;
+    private int frameSize;
 
     /**
      * This teleporter's current status.
@@ -145,9 +155,6 @@ public class TileEntityTeleporter extends TileEntityMekanism implements IChunkLo
     @Override
     protected void onUpdateServer() {
         super.onUpdateServer();
-        if (teleportBounds == null && frameDirection != null) {
-            resetBounds();
-        }
 
         status = canTeleport();
         if (MekanismUtils.canFunction(this) && status == 1 && teleDelay == 0) {
@@ -188,14 +195,6 @@ public class TileEntityTeleporter extends TileEntityMekanism implements IChunkLo
         }
     }
 
-    private void resetBounds() {
-        if (frameDirection == null) {
-            teleportBounds = null;
-        } else {
-            teleportBounds = getTeleporterBoundingBox(frameDirection);
-        }
-    }
-
     /**
      * Checks whether, or why not, this teleporter can teleport entities.
      *
@@ -205,10 +204,10 @@ public class TileEntityTeleporter extends TileEntityMekanism implements IChunkLo
         Direction direction = getFrameDirection();
         if (direction == null) {
             frameDirection = null;
+            teleportBounds = null;
             return 2;
         } else if (frameDirection != direction) {
             frameDirection = direction;
-            resetBounds();
         }
         Coord4D closestCoords = getClosest();
         if (closestCoords == null) {

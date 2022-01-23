@@ -12,7 +12,7 @@ import mekanism.common.lib.frequency.Frequency.FrequencyIdentity;
 import mekanism.common.lib.frequency.FrequencyType;
 import mekanism.common.network.IMekanismPacket;
 import mekanism.common.network.to_client.PacketPortalFX;
-import mekanism.common.tile.TileEntityTeleporter;
+import mekanism.common.tile.multiblock.TileEntityTeleporter;
 import mekanism.common.util.StorageUtils;
 import mekanism.common.util.WorldUtils;
 import net.minecraft.server.level.ServerPlayer;

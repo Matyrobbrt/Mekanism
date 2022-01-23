@@ -64,6 +64,8 @@ import mekanism.common.content.sps.SPSValidator;
 import mekanism.common.content.tank.TankCache;
 import mekanism.common.content.tank.TankMultiblockData;
 import mekanism.common.content.tank.TankValidator;
+import mekanism.common.content.teleporter.TeleporterMultiblockData;
+import mekanism.common.content.teleporter.TeleporterValidator;
 import mekanism.common.content.transporter.PathfinderCache;
 import mekanism.common.content.transporter.TransporterManager;
 import mekanism.common.integration.MekanismHooks;
@@ -175,6 +177,7 @@ public class Mekanism {
     public static final MultiblockManager<BoilerMultiblockData> boilerManager = new MultiblockManager<>("thermoelectricBoiler", MultiblockCache::new, BoilerValidator::new);
     public static final MultiblockManager<EvaporationMultiblockData> evaporationManager = new MultiblockManager<>("evaporation", MultiblockCache::new, EvaporationValidator::new);
     public static final MultiblockManager<SPSMultiblockData> spsManager = new MultiblockManager<>("sps", SPSCache::new, SPSValidator::new);
+    public static final MultiblockManager<TeleporterMultiblockData> teleporterManager = new MultiblockManager<>("teleporter", MultiblockCache::new, TeleporterValidator::new);
     /**
      * Mekanism creative tab
      */

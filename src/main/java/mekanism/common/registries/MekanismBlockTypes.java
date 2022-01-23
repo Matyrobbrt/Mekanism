@@ -59,7 +59,7 @@ import mekanism.common.tile.TileEntityPressureDisperser;
 import mekanism.common.tile.TileEntityQuantumEntangloporter;
 import mekanism.common.tile.TileEntityRadioactiveWasteBarrel;
 import mekanism.common.tile.TileEntitySecurityDesk;
-import mekanism.common.tile.TileEntityTeleporter;
+import mekanism.common.tile.multiblock.TileEntityTeleporter;
 import mekanism.common.tile.base.TileEntityMekanism;
 import mekanism.common.tile.laser.TileEntityLaser;
 import mekanism.common.tile.laser.TileEntityLaserAmplifier;
@@ -109,6 +109,7 @@ import mekanism.common.tile.multiblock.TileEntitySPSPort;
 import mekanism.common.tile.multiblock.TileEntityStructuralGlass;
 import mekanism.common.tile.multiblock.TileEntitySuperchargedCoil;
 import mekanism.common.tile.multiblock.TileEntitySuperheatingElement;
+import mekanism.common.tile.multiblock.TileEntityTeleporterFrame;
 import mekanism.common.tile.multiblock.TileEntityThermalEvaporationBlock;
 import mekanism.common.tile.multiblock.TileEntityThermalEvaporationController;
 import mekanism.common.tile.multiblock.TileEntityThermalEvaporationValve;
@@ -653,10 +654,11 @@ public class MekanismBlockTypes {
           .with(new AttributeCustomResistance(9), Attributes.MULTIBLOCK, AttributeMobSpawn.WHEN_NOT_FORMED)
           .build();
     // Teleporter Frame
-    public static final BlockType TELEPORTER_FRAME = BlockTypeBuilder
-          .createBlock(MekanismLang.DESCRIPTION_TELEPORTER_FRAME)
-          .withLight(10)
-          .build();
+    public static final BlockTypeTile<TileEntityTeleporterFrame> TELEPORTER_FRAME = BlockTileBuilder
+            .createBlock(() -> MekanismTileEntityTypes.TELEPORTER_FRAME, MekanismLang.DESCRIPTION_TELEPORTER_FRAME)
+            .with(new AttributeCustomResistance(9), Attributes.MULTIBLOCK, AttributeMobSpawn.WHEN_NOT_FORMED)
+            .withLight(10)
+            .build();
     // Steel Casing
     public static final BlockType STEEL_CASING = BlockTypeBuilder
           .createBlock(MekanismLang.DESCRIPTION_STEEL_CASING)

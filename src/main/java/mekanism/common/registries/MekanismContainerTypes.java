@@ -37,7 +37,7 @@ import mekanism.common.tile.TileEntityModificationStation;
 import mekanism.common.tile.TileEntityPersonalChest;
 import mekanism.common.tile.TileEntityQuantumEntangloporter;
 import mekanism.common.tile.TileEntitySecurityDesk;
-import mekanism.common.tile.TileEntityTeleporter;
+import mekanism.common.tile.multiblock.TileEntityTeleporter;
 import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.laser.TileEntityLaserAmplifier;
 import mekanism.common.tile.laser.TileEntityLaserTractorBeam;

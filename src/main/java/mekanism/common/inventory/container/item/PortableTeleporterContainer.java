@@ -10,7 +10,7 @@ import mekanism.common.inventory.container.IEmptyContainer;
 import mekanism.common.inventory.container.sync.SyncableByte;
 import mekanism.common.lib.frequency.FrequencyType;
 import mekanism.common.registries.MekanismContainerTypes;
-import mekanism.common.tile.TileEntityTeleporter;
+import mekanism.common.tile.multiblock.TileEntityTeleporter;
 import mekanism.common.util.StorageUtils;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;

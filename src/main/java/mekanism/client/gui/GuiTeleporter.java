@@ -10,7 +10,7 @@ import mekanism.client.gui.element.custom.GuiTeleporterStatus;
 import mekanism.common.content.teleporter.TeleporterFrequency;
 import mekanism.common.inventory.container.tile.MekanismTileContainer;
 import mekanism.common.lib.frequency.FrequencyType;
-import mekanism.common.tile.TileEntityTeleporter;
+import mekanism.common.tile.multiblock.TileEntityTeleporter;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.network.chat.Component;
 
